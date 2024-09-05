@@ -1,0 +1,15 @@
+Resources:
+  MyLambdaFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: arn:aws:iam::account-id:role/lambda-role
+      Code:
+        S3Bucket: your-s3-bucket
+        S3Key: function.zip
+      Runtime: nodejs14.x
+ 
+  MyApiGateway:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Name: "MyAPI"
